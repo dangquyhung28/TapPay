@@ -1,0 +1,97 @@
+<LinearLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView
+        android:id="@+id/logoImg"
+        android:layout_marginTop="140dp"
+        android:src="@drawable/logo_tappay"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="100dp"
+        android:layout_height="100dp">
+
+    </ImageView>
+    <TextView
+        android:id="@+id/appName"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        android:text="TAPPAY"
+        android:textSize="24sp"
+        android:textColor="#034CCB"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </TextView>
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:text="Chào mừng bạn đến với TapPay ví điện tử tiện ích"
+        android:layout_gravity="center_horizontal"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </TextView>
+    <TextView
+        android:id="@+id/descriptionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Pembayaran payment nomor 1 di Indonesia mudah dan proses cepat"
+        android:textSize="14sp"
+        android:textColor="#757575"
+        android:gravity="center" />
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#000000"
+        android:layout_gravity="center_horizontal"
+        android:text="Login"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="#E8ECF4"
+        android:text="Register"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        />
+
+    <!-- Footer -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <!-- Logo tổ chức -->
+        <TextView
+            android:text="By DangQuyHung"
+            android:layout_marginEnd="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </TextView>
+        <ImageView
+            android:id="@+id/footerLogo1"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/icon_cash_24" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
