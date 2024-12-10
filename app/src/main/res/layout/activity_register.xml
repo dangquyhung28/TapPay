@@ -5,9 +5,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/gradient_background"
-    tools:context=".LoginActivity">
+    >
     <ImageView
-        android:id="@+id/btn_backLogin"
+        android:id="@+id/btn_backRegister"
         android:layout_marginTop="24dp"
         android:layout_marginStart="40dp"
         android:background="@drawable/icon_back_40"
@@ -16,21 +16,33 @@
     </ImageView>
 
     <TextView
-        android:id="@+id/tvlogin"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        android:textSize="30sp"
-        android:layout_marginTop="24dp"
+        android:id="@+id/tvRegister"
+        android:layout_width="340dp"
+        android:layout_height="78dp"
         android:layout_marginStart="40dp"
-        android:text="Welcome to TapPay! Please login."
-        android:layout_width="280dp"
-        android:layout_height="78dp">
-    </TextView>
-    
+        android:layout_marginTop="24dp"
+        android:text="Hello, please register if you don't have an account."
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"></TextView>
+
     <EditText
-        android:id="@+id/et_email"
-        android:hint="Enter your email"
+        android:id="@+id/et_username"
+        android:hint="Username"
         android:layout_marginTop="28dp"
+        android:padding="8dp"
+        android:textSize="14dp"
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded_edittext_background"
+        android:layout_width="330dp"
+        android:layout_height="46dp">
+
+    </EditText>
+    <EditText
+        android:id="@+id/et_emailRegister"
+        android:hint="Email"
+        android:layout_marginTop="12dp"
         android:padding="8dp"
         android:textSize="14dp"
         android:textColor="@color/black"
@@ -43,42 +55,44 @@
     <EditText
         android:id="@+id/et_password"
         android:layout_marginTop="12dp"
-        android:hint="Enter your password"
+        android:hint="Password"
         android:padding="8dp"
         android:textSize="14dp"
         android:textColor="@color/black"
         android:layout_gravity="center"
         android:background="@drawable/rounded_edittext_background"
-        android:drawableEnd="@drawable/icon_eye"
         android:layout_width="330dp"
         android:layout_height="46dp">
 
     </EditText>
-    <TextView
-        android:id="@+id/tv_forgotPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Forgot Password"
-        android:textColor="#35C2C1"
-        android:textSize="14sp"
-        android:layout_marginTop="16dp"
-        android:textAlignment="center"
+
+    <EditText
+        android:id="@+id/et_confirmPassword"
+        android:layout_marginTop="12dp"
+        android:hint="Confirm password"
+        android:padding="8dp"
+        android:textSize="14dp"
+        android:textColor="@color/black"
         android:layout_gravity="center"
-        ></TextView>
+        android:background="@drawable/rounded_edittext_background"
+        android:layout_width="330dp"
+        android:layout_height="46dp">
+
+    </EditText>
 
     <Button
-        android:id="@+id/btn_loginLogin"
+        android:id="@+id/btn_registerRegister"
         android:layout_width="330dp"
         android:layout_height="56dp"
         android:layout_marginTop="20dp"
         android:backgroundTint="@null"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/rounded_button_background"
-        android:text="Login"
+        android:text="Register"
         android:textColor="#FFFFFF"
         android:textSize="16sp" />
     <TextView
-        android:text="Or Login with"
+        android:text="Or Register with"
         android:layout_gravity="center"
         android:layout_marginTop="28dp"
         android:textSize="14dp"
@@ -96,7 +110,7 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/btn_loginFb"
+            android:id="@+id/btn_registerFb"
             android:background="@drawable/rounded_textview_background"
             android:layout_margin="8dp"
             android:padding="16dp"
@@ -104,7 +118,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"></TextView>
         <TextView
-            android:id="@+id/btn_loginGg"
+            android:id="@+id/btn_registerGg"
             android:layout_margin="8dp"
             android:background="@drawable/rounded_textview_background"
             android:padding="16dp"
@@ -112,7 +126,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"></TextView>
         <TextView
-            android:id="@+id/btn_loginApple"
+            android:id="@+id/btn_registerApple"
             android:background="@drawable/rounded_textview_background"
             android:padding="16dp"
             android:layout_margin="8dp"
@@ -136,7 +150,7 @@
             android:id="@+id/tv_registarNow"
             android:textSize="14sp"
             android:textStyle="bold"
-            android:text="Registar Now"
+            android:text="Login Now"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"></TextView>
 

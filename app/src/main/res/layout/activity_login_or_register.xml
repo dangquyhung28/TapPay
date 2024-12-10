@@ -46,23 +46,25 @@
         android:gravity="center" />
 
     <Button
-        android:id="@+id/loginButton"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/btn_login"
+        android:layout_width="330dp"
+        android:layout_height="56dp"
         android:layout_marginTop="20dp"
-        android:backgroundTint="#000000"
+        android:backgroundTint="@null"
         android:layout_gravity="center_horizontal"
+        android:background="@drawable/rounded_button_background"
         android:text="Login"
         android:textColor="#FFFFFF"
         android:textSize="16sp" />
 
     <Button
-        android:id="@+id/registerButton"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/btn_register"
+        android:layout_width="330dp"
+        android:layout_height="56dp"
         android:layout_marginTop="10dp"
         android:layout_gravity="center_horizontal"
-        android:backgroundTint="#E8ECF4"
+        android:backgroundTint="#FFFFFF"
+        android:background="@drawable/rounded_button_background"
         android:text="Register"
         android:textColor="#000000"
         android:textSize="16sp"
