@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@drawable/gradient_background"
+    >
+    <ImageView
+        android:id="@+id/btn_backPinVerification"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/icon_back_40"
+        android:layout_width="40dp"
+        android:layout_height="40dp">
+    </ImageView>
+
+    <TextView
+        android:id="@+id/tvRegister"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:gravity="center"
+        android:layout_marginTop="24dp"
+        android:text="Please enter the code sent to your email."
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"></TextView>
+
+    <EditText
+        android:id="@+id/et_emailCode"
+        android:layout_marginTop="28dp"
+        android:padding="8dp"
+        android:hint="Enter your Code"
+        android:textSize="14dp"
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded_edittext_background"
+        android:layout_width="match_parent"
+        android:layout_height="46dp">
+
+    </EditText>
+
+    <Button
+        android:id="@+id/btn_registerEmailCode"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/rounded_button_background"
+        android:text="Register"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
+
+
+
+
+</LinearLayout>
