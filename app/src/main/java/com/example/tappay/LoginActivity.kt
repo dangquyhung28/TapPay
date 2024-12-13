@@ -1,5 +1,6 @@
 package com.example.tappay
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -17,6 +18,10 @@ class LoginActivity : AppCompatActivity() {
 
         binding.btnBackLogin.setOnClickListener{
             finish()
+        }
+        binding.btnLoginLogin.setOnClickListener {
+            var intent = Intent(this, PinVerificationActivity::class.java)
+            startActivity(intent)
         }
 
 

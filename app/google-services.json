@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "925697542517",
+    "firebase_url": "https://tappay-11be0-default-rtdb.firebaseio.com",
+    "project_id": "tappay-11be0",
+    "storage_bucket": "tappay-11be0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:925697542517:android:15dd35ae65f0ab026e2b3c",
+        "android_client_info": {
+          "package_name": "com.example.tappay"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-YRbNXfvgV6YtQG6c0hywm5zNRCpKN9A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

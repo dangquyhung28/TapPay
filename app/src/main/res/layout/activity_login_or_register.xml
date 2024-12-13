@@ -2,15 +2,15 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:padding="24dp"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <ImageView
         android:id="@+id/logoImg"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="68dp"
         android:src="@drawable/logo_tappay"
         android:layout_gravity="center_horizontal"
         android:layout_width="100dp"
         android:layout_height="100dp">
-
     </ImageView>
     <TextView
         android:id="@+id/appName"
@@ -28,15 +28,15 @@
         android:id="@+id/welcomeText"
         android:text="Chào mừng bạn đến với TapPay ví điện tử tiện ích"
         android:layout_gravity="center_horizontal"
-        android:textSize="16sp"
+        android:textSize="14sp"
+        android:gravity="center"
         android:textStyle="italic"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
     </TextView>
     <TextView
         android:id="@+id/descriptionText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_gravity="center_horizontal"
@@ -47,7 +47,7 @@
 
     <Button
         android:id="@+id/btn_login"
-        android:layout_width="330dp"
+        android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginTop="20dp"
         android:backgroundTint="@null"
@@ -59,7 +59,7 @@
 
     <Button
         android:id="@+id/btn_register"
-        android:layout_width="330dp"
+        android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginTop="10dp"
         android:layout_gravity="center_horizontal"
