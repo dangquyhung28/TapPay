@@ -26,49 +26,63 @@ class RegisterActivity : AppCompatActivity() {
         binding.btnBackRegister.setOnClickListener {
             finish()
         }
-
         binding.btnRegisterRegister.setOnClickListener {
             val username = binding.etUsername.text.toString().trim()
             val email = binding.etEmailRegister.text.toString().trim()
             val password = binding.etPassword.text.toString().trim()
             val confirmPassword = binding.etConfirmPassword.text.toString().trim()
-
             if (check(username, email, password, confirmPassword)) {
-                FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
-                    .addOnCompleteListener { task ->
-                        if (task.isSuccessful) {
-                            val user = FirebaseAuth.getInstance().currentUser
+                FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
+                    if(task.isSuccessful){
+                        val user = FirebaseAuth.getInstance().currentUser
+                        user?.sendEmailVerification()?.addOnCompleteListener{ emailTask ->
+                            if(emailTask.isSuccessful){
+                                saveUserToDatabase(user.uid, username, email, password)
 
-                            // Tạo mã OTP và gửi qua email
-                            val otp = generateOTP()
-                            sendOtpEmail(email, otp)
+                                Toast.makeText(
+                                    this,
+                                    "Đăng ký thành công! Vui lòng xác nhận email của bạn.",
+                                    Toast.LENGTH_SHORT
+                                ).show()
 
-                            // Lưu mã OTP vào Firebase
-                            val database = FirebaseDatabase.getInstance()
-                            val userRef = database.getReference("users_temp").child(user!!.uid)
-
-                            val tempUser = mapOf(
-                                "username" to username,
-                                "email" to email,
-                                "password" to password,
-                                "verified" to false,
-                                "otp" to otp
-                            )
-
-                            userRef.setValue(tempUser).addOnSuccessListener {
-                                // Chuyển tới màn hình nhập mã OTP
-                                val intent = Intent(this, CodeVerificationActivity::class.java)
-                                intent.putExtra("userId", user.uid)
+                                val intent = Intent(this, LoginActivity::class.java)
                                 startActivity(intent)
                                 finish()
+                            }else {
+                                Toast.makeText(
+                                    this,
+                                    "Gửi email xác thực thất bại: ${emailTask.exception?.message}",
+                                    Toast.LENGTH_SHORT
+                                ).show()
                             }
-                        } else {
-                            Toast.makeText(this, "Đăng ký thất bại: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
-                            Log.d("Đăng ký thất bại", task.exception?.message.toString())
                         }
+                    }else {
+                        Toast.makeText(this, "Đăng ký thất bại: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                        Log.d("Đăng ký thất bại", task.exception?.message.toString())
                     }
+                }
             }
+
         }
+    }
+
+    private fun saveUserToDatabase(uid: String, username: String, email: String, password: String) {
+        val database = FirebaseDatabase.getInstance()
+        val userRef = database.getReference("users").child(uid)
+
+        val user = mapOf(
+            "username" to username,
+            "email" to email,
+            "password" to password,
+            "verified" to false
+        )
+
+        userRef.setValue(user).addOnSuccessListener {
+            Log.d("Database", "Người dùng đã được lưu vào Firebase Realtime Database")
+        }.addOnFailureListener { e ->
+            Log.e("Database", "Lỗi khi lưu người dùng: ${e.message}")
+        }
+
     }
 
     private fun check(username: String, email: String, password: String, confirmPassword: String): Boolean {
@@ -90,39 +104,8 @@ class RegisterActivity : AppCompatActivity() {
         return true
     }
 
-    private fun generateOTP(): String {
-        return (100000..999999).random().toString()  // Tạo mã OTP ngẫu nhiên 6 chữ số
-    }
 
-    private fun sendOtpEmail(email: String, otp: String) {
-        val properties = Properties().apply {
-            put("mail.smtp.auth", "true")
-            put("mail.smtp.starttls.enable", "true")
-            put("mail.smtp.host", "smtp.gmail.com")
-            put("mail.smtp.port", "587")
-        }
 
-        val session = javax.mail.Session.getInstance(properties, object : javax.mail.Authenticator() {
-            override fun getPasswordAuthentication(): javax.mail.PasswordAuthentication {
-                return javax.mail.PasswordAuthentication("your_email@gmail.com", "your_app_password")
-            }
-        })
 
-        try {
-            val message = MimeMessage(session).apply {
-                setFrom(InternetAddress("your_email@gmail.com"))
-                setRecipients(Message.RecipientType.TO, InternetAddress.parse(email))
-                subject = "Mã OTP của bạn"
-                setText("Mã OTP của bạn là: $otp")
-            }
-
-            // Gửi email
-            Transport.send(message)
-            Log.d("OTP", "Mã OTP đã được gửi đến $email")
-        } catch (e: Exception) {
-            e.printStackTrace()
-            Log.d("OTP", "Lỗi khi gửi OTP: ${e.message}")
-        }
-    }
 
 }
