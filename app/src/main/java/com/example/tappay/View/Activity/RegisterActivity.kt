@@ -1,4 +1,4 @@
-package com.example.tappay
+package com.example.tappay.View.Activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,11 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.tappay.databinding.ActivityRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
-import javax.mail.Message
-import javax.mail.Transport
-import javax.mail.internet.InternetAddress
-import javax.mail.internet.MimeMessage
-import java.util.Properties
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding

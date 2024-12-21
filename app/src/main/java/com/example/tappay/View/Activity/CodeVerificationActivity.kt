@@ -1,11 +1,10 @@
-package com.example.tappay
+package com.example.tappay.View.Activity
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.tappay.databinding.ActivityCodeVerificationBinding
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
 class CodeVerificationActivity : AppCompatActivity() {
@@ -32,10 +31,7 @@ class CodeVerificationActivity : AppCompatActivity() {
                 val otpStored = snapshot.child("otp").value.toString()
 
                 if (otpInput == otpStored) {
-                    // Cập nhật thông tin người dùng đã xác thực và chuyển sang màn tạo mã PIN
                     userRef.child("verified").setValue(true)
-
-                    // Chuyển sang activity tạo mã PIN
                     val intent = Intent(this, CreatePinActivity::class.java)
                     intent.putExtra("userId", userId)  // Chuyển userId qua activity mới
                     startActivity(intent)

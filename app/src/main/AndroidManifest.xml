@@ -16,36 +16,37 @@
         android:theme="@style/Theme.TapPay"
         tools:targetApi="31">
         <activity
-            android:name=".ForgotPasswordActivity"
+            android:name=".View.Activity.ForgotPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".CreatePinActivity"
+            android:name=".View.Activity.CreatePinActivity"
             android:exported="false" />
         <activity
-            android:name=".CodeVerificationActivity"
+            android:name=".View.Activity.CodeVerificationActivity"
             android:exported="false"
             android:theme="@style/Theme.TapPay" />
         <activity
-            android:name=".PinVerificationActivity"
+            android:name=".View.Activity.PinVerificationActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".View.Activity.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginOrRegisterActivity"
+            android:name=".View.Activity.LoginOrRegisterActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".View.Activity.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
