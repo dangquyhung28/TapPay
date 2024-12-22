@@ -1,11 +1,11 @@
-package com.example.tappay
+package com.example.tappay.View.Activity
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.tappay.MainActivity
 import com.example.tappay.databinding.ActivityCreatePinBinding
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
 class CreatePinActivity : AppCompatActivity() {

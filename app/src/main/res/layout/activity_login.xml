@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:background="@drawable/gradient_background"
     android:padding="24dp"
-    tools:context=".LoginActivity">
+    tools:context=".View.Activity.LoginActivity">
     <ImageView
         android:id="@+id/btn_backLogin"
         android:layout_marginTop="8dp"
