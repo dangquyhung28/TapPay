@@ -7,7 +7,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="16dp"
         android:background="@drawable/gradient_background">
@@ -89,100 +89,11 @@
         </LinearLayout>
 
         <!-- Grid of Services -->
-        <GridLayout
+        <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:columnCount="4"
-            android:layout_marginTop="20dp">
+            android:layout_height="match_parent">
 
-            <!-- Electricity -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_margin="10dp">
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/icon_google_24"
-                    android:contentDescription="Electricity"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Electricity"
-                    android:textSize="12sp"
-                    android:layout_marginTop="5dp"/>
-            </LinearLayout>
-
-            <!-- Internet -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_margin="10dp">
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/icon_google_24"
-                    android:contentDescription="Internet"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Internet"
-                    android:textSize="12sp"
-                    android:layout_marginTop="5dp"/>
-            </LinearLayout>
-
-            <!-- Voucher -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_margin="10dp">
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/icon_google_24"
-                    android:contentDescription="Voucher"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Voucher"
-                    android:textSize="12sp"
-                    android:layout_marginTop="5dp"/>
-            </LinearLayout>
-
-            <!-- Assurance -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_margin="10dp">
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/icon_google_24"
-                    android:contentDescription="Assurance"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Assurance"
-                    android:textSize="12sp"
-                    android:layout_marginTop="5dp"/>
-            </LinearLayout>
-        </GridLayout>
+        </androidx.recyclerview.widget.RecyclerView>
 
         <!-- Banner Section -->
         <androidx.cardview.widget.CardView
